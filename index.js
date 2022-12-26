@@ -4,44 +4,50 @@ $(function () {
     $(document).scroll(function () {
         var $nav = $(".navbar-fixed-top");
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-        console.log("scroll")
     });
 
     // smooth scrolling in href anchors
     $(document).on('click', 'a[href^="#"]', function (event) {
         event.preventDefault();
-    
+
         $('html, body').animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 500);
     });
 
-    let slideIndex = 1;
-    showSlides(slideIndex);
 
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
 });
+$(document).ready(function () {
+
+    var intervalId = window.setInterval(function(){
+        plusSlides()
+      }, 6000);
+
+
+    $("#next").click(function () {
+        plusSlides()
+    });
+    $("#prev").click(function () {
+        plusSlides()
+    });
+    function plusSlides() {
+        if ($("#banner1").hasClass("active")) {
+            $("#banner1").removeClass("active")
+            $("#banner1").addClass("deactive")
+
+            $("#banner2").removeClass("deactive")
+            $("#banner2").addClass("active")
+
+        }
+        else {
+            $("#banner2").removeClass("active")
+            $("#banner2").addClass("deactive")
+
+            $("#banner1").removeClass("deactive")
+            $("#banner1").addClass("active")
+        }
+
+    }
+}
+
+);
