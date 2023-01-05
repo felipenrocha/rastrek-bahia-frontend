@@ -32,6 +32,8 @@ $(document).ready(function () {
         nextSlide()
     }, 5000);
 
+
+    //  todo: refactor this mess lol
     $('#section-navbar-rastrek').click(function () {
 
         if (!rastrekSection) {
@@ -57,6 +59,22 @@ $(document).ready(function () {
         }
 
     });
+    $('#rastrek-logo-white').click(function () {
+
+        if (!rastrekSection) {
+            setRastrekSection();
+            rastrekSection = true
+        }
+        else {
+            setFinanciamentoSection()
+            rastrekSection = false
+        }
+
+    });
+
+
+
+
     $('#select-section-licenciamento').click(function () {
         isRastrekActive = $('#select-section-rastrek').hasClass('active');
         if (isRastrekActive) {
@@ -81,6 +99,21 @@ $(document).ready(function () {
         }
 
     });
+    $('#total-logo-white').click(function () {
+        isRastrekActive = $('#select-section-rastrek').hasClass('active');
+        if (isRastrekActive) {
+            setFinanciamentoSection();
+            rastrekSection = false
+        }
+        else {
+            setRastrekSection()
+            rastrekSection = true
+        }
+
+    });
+
+
+
     function nextSlide() {
         $('#banner' + currentSlide).removeClass('active');
         $('#banner' + currentSlide).addClass('deactive');
