@@ -31,8 +31,22 @@ $(document).ready(function () {
     const interval = setInterval(function () {
         nextSlide()
     }, 5000);
+
+    $('#section-navbar-rastrek').click(function () {
+
+        if (!rastrekSection) {
+            setRastrekSection();
+            rastrekSection = true
+        }
+        else {
+            setFinanciamentoSection()
+            rastrekSection = false
+        }
+
+    });
+
     $('#select-section-rastrek').click(function () {
-        
+
         if (!rastrekSection) {
             setRastrekSection();
             rastrekSection = true
@@ -44,7 +58,19 @@ $(document).ready(function () {
 
     });
     $('#select-section-licenciamento').click(function () {
-        isRastrekActive =  $('#select-section-rastrek').hasClass('active');
+        isRastrekActive = $('#select-section-rastrek').hasClass('active');
+        if (isRastrekActive) {
+            setFinanciamentoSection();
+            rastrekSection = false
+        }
+        else {
+            setRastrekSection()
+            rastrekSection = true
+        }
+
+    });
+    $('#section-navbar-licenciamento').click(function () {
+        isRastrekActive = $('#select-section-rastrek').hasClass('active');
         if (isRastrekActive) {
             setFinanciamentoSection();
             rastrekSection = false
@@ -83,9 +109,16 @@ $(document).ready(function () {
 
 
 function setRastrekSection() {
-    // remove button classes
+    // add and remove button classes
     $('#select-section-rastrek').addClass('active');
+    $('#section-navbar-rastrek').addClass('active');
+
+
     $('#select-section-licenciamento').removeClass('active');
+    $('#section-navbar-licenciamento').removeClass('active');
+
+
+
     $("#section-licenciamento").css("display", "none")
 
 
@@ -102,7 +135,12 @@ function setRastrekSection() {
 }
 function setFinanciamentoSection() {
     $('#select-section-licenciamento').addClass('active');
+    $('#section-navbar-licenciamento').addClass('active');
+
+
     $('#select-section-rastrek').removeClass('active');
+    $('#section-navbar-rastrek').removeClass('active');
+
     $("#section-rastrek").css("display", "none")
 
 
