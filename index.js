@@ -1,8 +1,7 @@
-
 $(function () {
     // fixed navbar changing collor when scrolled
     $(document).scroll(function () {
-        var $nav = $(".navbar-fixed-top");
+        var $nav = $('.navbar-fixed-top');
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     });
 
@@ -10,44 +9,110 @@ $(function () {
     $(document).on('click', 'a[href^="#"]', function (event) {
         event.preventDefault();
 
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
+        $('html, body').animate(
+            {
+                scrollTop: $($.attr(this, 'href')).offset().top,
+            },
+            500
+        );
     });
-
-
 });
 $(document).ready(function () {
-
-    var intervalId = window.setInterval(function(){
-        plusSlides()
-      }, 6000);
+    let currentSlide = 1;
+    let rastrekSection = false
 
 
-    $("#next").click(function () {
-        plusSlides()
+    $('#next').click(function () {
+        nextSlide(currentSlide);
     });
-    $("#prev").click(function () {
-        plusSlides()
+    $('#prev').click(function () {
+        prevSlide(currentSlide);
     });
-    function plusSlides() {
-        if ($("#banner1").hasClass("active")) {
-            $("#banner1").removeClass("active")
-            $("#banner1").addClass("deactive")
-
-            $("#banner2").removeClass("deactive")
-            $("#banner2").addClass("active")
-
+    const interval = setInterval(function () {
+        nextSlide()
+    }, 5000);
+    $('#select-section-rastrek').click(function () {
+        
+        if (!rastrekSection) {
+            setRastrekSection();
+            rastrekSection = true
         }
         else {
-            $("#banner2").removeClass("active")
-            $("#banner2").addClass("deactive")
-
-            $("#banner1").removeClass("deactive")
-            $("#banner1").addClass("active")
+            setFinanciamentoSection()
+            rastrekSection = false
         }
 
-    }
-}
+    });
+    $('#select-section-licenciamento').click(function () {
+        isRastrekActive =  $('#select-section-rastrek').hasClass('active');
+        if (isRastrekActive) {
+            setFinanciamentoSection();
+            rastrekSection = false
+        }
+        else {
+            setRastrekSection()
+            rastrekSection = true
+        }
 
-);
+    });
+    function nextSlide() {
+        $('#banner' + currentSlide).removeClass('active');
+        $('#banner' + currentSlide).addClass('deactive');
+        console.log(currentSlide);
+        if (currentSlide >= 3) {
+            currentSlide = 1;
+        } else {
+            currentSlide++;
+        }
+        $('#banner' + currentSlide).removeClass('deactive');
+        $('#banner' + currentSlide).addClass('active');
+    }
+    function prevSlide() {
+        $('#banner' + currentSlide).removeClass('active');
+        $('#banner' + currentSlide).addClass('deactive');
+        if (currentSlide <= 1) {
+            currentSlide = 3;
+        } else {
+            currentSlide--;
+        }
+        $('#banner' + currentSlide).removeClass('deactive');
+        $('#banner' + currentSlide).addClass('active');
+    }
+
+});
+
+
+function setRastrekSection() {
+    // remove button classes
+    $('#select-section-rastrek').addClass('active');
+    $('#select-section-licenciamento').removeClass('active');
+    $("#section-licenciamento").css("display", "none")
+
+
+    // set to section to visible
+    $("#section-rastrek").fadeIn(600);
+    // scroll to section
+    $('html, body').animate({
+        scrollTop: $("#section-rastrek").offset().top
+    }, 800);
+
+
+
+
+}
+function setFinanciamentoSection() {
+    $('#select-section-licenciamento').addClass('active');
+    $('#select-section-rastrek').removeClass('active');
+    $("#section-rastrek").css("display", "none")
+
+
+
+    // set to section to visible
+    $("#section-licenciamento").fadeIn(600);
+    // scroll to section
+    $('html, body').animate({
+        scrollTop: $("#section-licenciamento").offset().top
+    }, 800);
+
+
+}
