@@ -40,10 +40,7 @@ $(document).ready(function () {
             setRastrekSection();
             rastrekSection = true
         }
-        else {
-            setFinanciamentoSection()
-            rastrekSection = false
-        }
+        
 
     });
 
@@ -53,10 +50,7 @@ $(document).ready(function () {
             setRastrekSection();
             rastrekSection = true
         }
-        else {
-            setFinanciamentoSection()
-            rastrekSection = false
-        }
+       
 
     });
     $('#rastrek-logo-white').click(function () {
@@ -65,10 +59,7 @@ $(document).ready(function () {
             setRastrekSection();
             rastrekSection = true
         }
-        else {
-            setFinanciamentoSection()
-            rastrekSection = false
-        }
+        
 
     });
 
@@ -81,10 +72,7 @@ $(document).ready(function () {
             setFinanciamentoSection();
             rastrekSection = false
         }
-        else {
-            setRastrekSection()
-            rastrekSection = true
-        }
+       
 
     });
     $('#section-navbar-licenciamento').click(function () {
@@ -93,10 +81,7 @@ $(document).ready(function () {
             setFinanciamentoSection();
             rastrekSection = false
         }
-        else {
-            setRastrekSection()
-            rastrekSection = true
-        }
+        
 
     });
     $('#total-logo-white').click(function () {
@@ -105,10 +90,7 @@ $(document).ready(function () {
             setFinanciamentoSection();
             rastrekSection = false
         }
-        else {
-            setRastrekSection()
-            rastrekSection = true
-        }
+        
 
     });
 
