@@ -61,7 +61,7 @@ $(document).ready(function () {
     );
     var rastrek2 = new Slide(
         "RASTREK",
-        "A Soluções esclusivas para o seu veículo ficar protegido por apenas R$49,90/mês",
+        "A Soluções exclusivas para o seu veículo ficar protegido por apenas R$49,90/mês",
         "assets/banner4.jpg",
         "https://wa.me/5571991816353"
     );
