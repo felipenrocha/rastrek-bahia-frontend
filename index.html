@@ -13,16 +13,24 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <link href="index.css" rel="stylesheet">
-    <link href="slideshow.css" rel="stylesheet">
+    <link href="slider.css" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/11e0f1af68.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <script src="slider.js"></script>
+
 
 
 </head>
 
 <body>
-
+     <!-- Start DEMO HTML (Use the following code into your project)-->
+     <div id="mySlider"></div>
+     <div id="sliderNav">
+         <div id="sliderPrev" onclick="prevSlide();"><i class="fa fa-chevron-left"></i></div>
+         <div id="sliderNext" onclick="nextSlide();"><i class="fa fa-chevron-right"></i></div>
+     </div>    
+  <!-- END EDMO HTML (Happy Coding!)-->
 
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-fixed-top navbar-expand-lg navbar-light">
@@ -31,7 +39,7 @@
             <!-- Navbar brand -->
             <a class="navbar-brand" style="margin-left: 20%; size: 20px;"><img src="assets/logo-white.png"
                     id="total-logo-white" width="50" alt="Rastrek">
-                <img id="rastrek-logo-white"  src="assets/logo-white-200x56-rastrek.png" width="200" alt="Rastrek"></a>
+                <img id="rastrek-logo-white" src="assets/logo-white-200x56-rastrek.png" width="200" alt="Rastrek"></a>
             <!-- <a class="dropdown-item" href="#"><img src="assets/logo.png" width="55" alt="Rastrek"></a> -->
             <!-- Toggle button -->
 
@@ -71,102 +79,10 @@
         <!-- Container wrapper -->
     </nav>
     <!-- Navbar -->
-    <div class="row">
-        <div class="col-md-12">
-            <div id="banner1" class="active">
-                <div>
-                    <img src="assets/road.jpg" alt="" style="width: 100%; height: 800px; filter: brightness(50%);">
-                    <br>
-                    <h2 class="centered banner-title" style="top: 250px; text-align: center;">
-                        RASTREK
-                    </h2>
-                    <h4 class="centered banner-subtitle" style="top: 350px; text-align: center;">Rastreamento Veicular
-                    </h4>
-                </div>
-                <br>
-                <h2 class="centered banner-number" style="top: 450px;text-align: center;">
-                    <a href="https://wa.me/5571991816353" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i>
-                        (71) 99181-6353
-                    </a>
-                </h2>
-                <h2 class="centered banner-number" style="top: 650px;text-align: center;">
-                    <a href="https://wa.me/5571991816353" target="_blank" rel="noopener">
-                        <button class="btn btn-warning" style="color: black; font-weight: bold;padding: 10px;">
-                            <i class="fab fa-whatsapp"></i>
-                            Contrate Agora</button>
-                    </a>
-                </h2>
-                <!-- <a href="#agenda">
-                    <button class="centered btn btn-warning agenda-button">
-                        AGENDE AGORA SUA INSTALAÇÃO
-                    </button>
-                </a> -->
-            </div>
-        </div>
-    </div>
 
-    <!-- banners -->
-    <section>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="banner2" class="deactive">
-                    <div>
-                        <img src="assets/banner3.jpg" alt=""
-                            style="width: 100%; height: 800px; filter: brightness(50%);">
-                        <br>
-                        <h2 class="centered banner-title" style="top: 250px; text-align: center;">
-                            TOTAL SERVIÇOS
-                        </h2>
-                        <h4 class="centered banner-subtitle" style="top: 450px; text-align: center;">
-                            Medo de Blitz??? Fique tranquilo!<br>
-                            Parcelamos seu IPVA e Multas em 12X.</h4>
-                    </div>
-                    <br>
 
-                    <h2 class="centered banner-number" style="top: 650px;text-align: center;">
-                        <a href="https://wa.me/5571991816353" target="_blank" rel="noopener">
-                            <button class="btn btn-warning" style="padding: 10px;color: black; font-weight: bold;">
-                                <i class="fab fa-whatsapp"></i>
-                                Dúvidas e Orçamentos</button>
-                        </a>
-                    </h2>
-                    <!-- <a href="#agenda">
-                    <button class="centered btn btn-warning agenda-button">
-                        AGENDE AGORA SUA INSTALAÇÃO
-                    </button>
-                </a> -->
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="banner3" class="deactive">
-                    <img src="assets/banner4.jpg" alt="" style="width: 100%; height: 800px; filter: brightness(30%);">
-                    <br>
-                    <h2 class="centered banner-title" style="top: 250px; text-align: center;">
-                        RASTREK
-                    </h2>
-                    <h4 class="centered banner-subtitle" style="top: 450px; text-align: center; color: white; ">
-                        Soluções esclusivas para o seu <br>
-                        veículo ficar protegido por apenas R$49,90/mês
-                    </h4>
-                    <h2 class="centered banner-number" style="top: 650px;text-align: center;">
-                        <a href="https://wa.me/5571991816353" target="_blank" rel="noopener" style="width: 100%;">
-                            <button class="btn btn-warning" style="color: black; font-weight: bold; padding: 10px;">
-                                <i class="fab fa-whatsapp"></i>
-                                Contrate Agora
-                            </button>
-                        </a>
-                    </h2>
-                </div>
-            </div>
+    <!-- NEW SLIDESHOW -->
 
-        </div>
-        <a class="prev" id="prev">&#10094;</a>
-        <a class="next" id="next">&#10095;</a>
-        </div>
-    </section>
 
     <!-- section abas serviços -->
     <section>

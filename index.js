@@ -18,19 +18,19 @@ $(function () {
     });
 });
 $(document).ready(function () {
-    let currentSlide = 1;
+    // let currentSlide = 1;
     let rastrekSection = false
 
 
-    $('#next').click(function () {
-        nextSlide(currentSlide);
-    });
-    $('#prev').click(function () {
-        prevSlide(currentSlide);
-    });
-    const interval = setInterval(function () {
-        nextSlide()
-    }, 5000);
+    // $('#next').click(function () {
+    //     nextSlide(currentSlide);
+    // });
+    // $('#prev').click(function () {
+    //     prevSlide(currentSlide);
+    // });
+    // const interval = setInterval(function () {
+    //     nextSlide()
+    // }, 5000);
 
 
     //  todo: refactor this mess lol
@@ -114,29 +114,36 @@ $(document).ready(function () {
 
 
 
-    function nextSlide() {
-        $('#banner' + currentSlide).removeClass('active');
-        $('#banner' + currentSlide).addClass('deactive');
-        console.log(currentSlide);
-        if (currentSlide >= 3) {
-            currentSlide = 1;
-        } else {
-            currentSlide++;
-        }
-        $('#banner' + currentSlide).removeClass('deactive');
-        $('#banner' + currentSlide).addClass('active');
-    }
-    function prevSlide() {
-        $('#banner' + currentSlide).removeClass('active');
-        $('#banner' + currentSlide).addClass('deactive');
-        if (currentSlide <= 1) {
-            currentSlide = 3;
-        } else {
-            currentSlide--;
-        }
-        $('#banner' + currentSlide).removeClass('deactive');
-        $('#banner' + currentSlide).addClass('active');
-    }
+
+
+
+
+
+    // COMMENTED FOR NEW ONE
+
+    // function nextSlide() {
+    //     $('#banner' + currentSlide).removeClass('active');
+    //     $('#banner' + currentSlide).addClass('deactive');
+    //     console.log(currentSlide);
+    //     if (currentSlide >= 3) {
+    //         currentSlide = 1;
+    //     } else {
+    //         currentSlide++;
+    //     }
+    //     $('#banner' + currentSlide).removeClass('deactive');
+    //     $('#banner' + currentSlide).addClass('active');
+    // }
+    // function prevSlide() {
+    //     $('#banner' + currentSlide).removeClass('active');
+    //     $('#banner' + currentSlide).addClass('deactive');
+    //     if (currentSlide <= 1) {
+    //         currentSlide = 3;
+    //     } else {
+    //         currentSlide--;
+    //     }
+    //     $('#banner' + currentSlide).removeClass('deactive');
+    //     $('#banner' + currentSlide).addClass('active');
+    // }
 
 });
 
